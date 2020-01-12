@@ -187,4 +187,6 @@ class DataModelController {
         thumbnails.append(UIImage())
         updateDrawing(newDrawing, at: dataModel.drawings.count - 1)
     }
+    
+
 }

@@ -33,21 +33,14 @@ Abstract:
 import UIKit
 import PencilKit
 
-class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDragInteractionDelegate {
-    
-//    ドロップされるview
-    
-    func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-
-        let dropInteraction = UIDropInteraction(delegate: self)
-        view.addInteraction(dropInteraction)
-    }
+class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDropInteractionDelegate {
 
     
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
     @IBOutlet var undoBarButtonitem: UIBarButtonItem!
     @IBOutlet var redoBarButtonItem: UIBarButtonItem!
+    
     
     
     /// スクロールできる高さ
@@ -85,6 +78,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
             
             updateLayout(for: toolPicker)
             canvasView.becomeFirstResponder()
+            
+ 
         }
         
         // Add a gesture recognizer that allows the user to sign the drawing by

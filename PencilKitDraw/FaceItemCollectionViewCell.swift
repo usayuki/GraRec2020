@@ -13,21 +13,27 @@ class FaceItemCollectionViewCell: UICollectionViewCell,UIDragInteractionDelegate
     
     @IBOutlet weak var itemImage: UIImageView!
     
-//    let dragDelegate: UIDragInteractionDelegate = ...
-//    let dragInteraction = UIDragInteraction(delegate: dragDelegate)
-//    dragInteraction.isEnabled = true    // iPhoneの場合はデフォルトがfalseになっている
-//    view.addInteraction(dragInteraction)
+    let dragInteraction = UIDragInteraction(delegate: self)
+    imageView.addInteraction(dragInteraction)
+    
+    //    let dragDelegate: UIDragInteractionDelegate = ...
+    //    let dragInteraction = UIDragInteraction(delegate: dragDelegate)
+    //    dragInteraction.isEnabled = true    // iPhoneの場合はデフォルトがfalseになっている
+    //    view.addInteraction(dragInteraction)
+    
     
     func dragInteraction(
-      _ interaction: UIDragInteraction,
-      itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-
-      guard let image = imageView.image else { return [] }
-
-      let provider = NSItemProvider(object: image)
-      let item = UIDragItem(itemProvider: provider)
-      item.localObject = image
-      return [item]
+        _ interaction: UIDragInteraction,
+        itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+        
+        guard let image = imageView.image else { return [] }
+        
+        
+        
+        let provider = NSItemProvider(object: image)
+        let item = UIDragItem(itemProvider: provider)
+        item.localObject = image
+        return [item]
     }
     
 }
