@@ -10,6 +10,8 @@ import Foundation
 
 class DropItem: DrawingViewController,UIDragInteractionDelegate {
     
-    
+//    let dropDelegate: UIDropInteractionDelegate = ...
+//    let dropInteraction = UIDropInteraction(delegate: dropDelegate)
+//    view.addInteraction(dropInteraction)
     
 }

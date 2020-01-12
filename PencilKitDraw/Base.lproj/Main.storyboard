@@ -106,12 +106,6 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W3V-Y4-rbX">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face0" translatesAutoresizingMaskIntoConstraints="NO" id="ap0-7f-Ldt">
-                                                    <rect key="frame" x="-41" y="0.0" width="123" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -305,7 +299,4 @@
             <point key="canvasLocation" x="-491.36690647482015" y="207.73381294964028"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="face0" width="1000" height="1000"/>
-    </resources>
 </document>

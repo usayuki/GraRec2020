@@ -50,15 +50,18 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     @IBOutlet var redoBarButtonItem: UIBarButtonItem!
     
     
-    /// Standard amount of overscroll allowed in the canvas.
+    /// スクロールできる高さ
     static let canvasOverscrollHeight: CGFloat = 500
     
-    /// Data model for the drawing displayed by this view controller.
+    /// View と Model の中間の役割　値を受け渡す
     var dataModelController: DataModelController!
     
-    /// Private drawing state.
+    /// Private drawing state.// 状態管理
+     // 何回描画したか数えておく
     var drawingIndex: Int = 0
+    // タップを検知
     var signatureGestureRecognizer: UITapGestureRecognizer!
+    // 修正しているかどうかのフラグ
     var hasModifiedDrawing = false
     
     // MARK: View Life Cycle
