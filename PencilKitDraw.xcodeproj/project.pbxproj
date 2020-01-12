@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E29C68A23CB1A4600D4E64D /* DropModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29C68923CB1A4600D4E64D /* DropModel2.swift */; };
+		8E29C68A23CB1A4600D4E64D /* DropModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29C68923CB1A4600D4E64D /* DropModel.swift */; };
 		8E2A66BB23BC663700D0E815 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A66BA23BC663700D0E815 /* SettingsViewController.swift */; };
+		8E33D41723CB61ED0050EC05 /* DragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33D41623CB61ED0050EC05 /* DragModel.swift */; };
 		8E42496623BDD95E002F5657 /* FaceItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42496523BDD95E002F5657 /* FaceItemViewController.swift */; };
 		8E535EB323CADC0B0084F66D /* FaceItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E535EB223CADC0B0084F66D /* FaceItemCollectionViewCell.swift */; };
 		DA4FD8922278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FD8912278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift */; };
@@ -24,8 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E29C68923CB1A4600D4E64D /* DropModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropModel2.swift; sourceTree = "<group>"; };
+		8E29C68923CB1A4600D4E64D /* DropModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropModel.swift; sourceTree = "<group>"; };
 		8E2A66BA23BC663700D0E815 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8E33D41623CB61ED0050EC05 /* DragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragModel.swift; sourceTree = "<group>"; };
 		8E42496523BDD95E002F5657 /* FaceItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceItemViewController.swift; sourceTree = "<group>"; };
 		8E535EB223CADC0B0084F66D /* FaceItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C720C209C7206E000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -101,9 +103,10 @@
 				8E2A66BA23BC663700D0E815 /* SettingsViewController.swift */,
 				DAB023A92278AC4C005102E6 /* DrawingViewController.swift */,
 				DA4FD8AD2278F074000FE6C3 /* DataModel.swift */,
-				8E29C68923CB1A4600D4E64D /* DropModel2.swift */,
+				8E29C68923CB1A4600D4E64D /* DropModel.swift */,
 				8E42496523BDD95E002F5657 /* FaceItemViewController.swift */,
 				8E535EB223CADC0B0084F66D /* FaceItemCollectionViewCell.swift */,
+				8E33D41623CB61ED0050EC05 /* DragModel.swift */,
 				DAB860E8227CE6DA009C9B1D /* SignatureViewController.swift */,
 				DAB023B32278AC4E005102E6 /* Info.plist */,
 				DAB023AB2278AC4C005102E6 /* Main.storyboard */,
@@ -203,12 +206,13 @@
 				8E535EB323CADC0B0084F66D /* FaceItemCollectionViewCell.swift in Sources */,
 				DAB023AA2278AC4C005102E6 /* DrawingViewController.swift in Sources */,
 				DA67042F22946742004011A1 /* PencilKitDrawNavigationController.swift in Sources */,
-				8E29C68A23CB1A4600D4E64D /* DropModel2.swift in Sources */,
+				8E29C68A23CB1A4600D4E64D /* DropModel.swift in Sources */,
 				8E42496623BDD95E002F5657 /* FaceItemViewController.swift in Sources */,
 				DAB023A82278AC4C005102E6 /* AppDelegate.swift in Sources */,
 				DA4FD8922278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift in Sources */,
 				DAC481D5227A1AA10076D01F /* ThumbnailCollectionViewCell.swift in Sources */,
 				DAB860E9227CE6DA009C9B1D /* SignatureViewController.swift in Sources */,
+				8E33D41723CB61ED0050EC05 /* DragModel.swift in Sources */,
 				DA4FD8AE2278F074000FE6C3 /* DataModel.swift in Sources */,
 				8E2A66BB23BC663700D0E815 /* SettingsViewController.swift in Sources */,
 			);
