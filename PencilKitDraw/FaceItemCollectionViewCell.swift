@@ -13,6 +13,10 @@ class FaceItemCollectionViewCell: UICollectionViewCell,UIDragInteractionDelegate
     
     @IBOutlet weak var itemImage: UIImageView!
     
+//    let dragDelegate: UIDragInteractionDelegate = ...
+//    let dragInteraction = UIDragInteraction(delegate: dragDelegate)
+//    dragInteraction.isEnabled = true    // iPhoneの場合はデフォルトがfalseになっている
+//    view.addInteraction(dragInteraction)
     
     func dragInteraction(
       _ interaction: UIDragInteraction,
