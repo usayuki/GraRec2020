@@ -1,19 +1,4 @@
-/*
-See LICENSE folder for this sample’s licensing information.
 
-Abstract:
-The app's data model for storing drawings, thumbnails, and signatures.
-*/
-
-/// Underlying the app's data model is a cross-platform `PKDrawing` object. `PKDrawing` adheres to `Codable`
-/// in Swift, or you can fetch its data representation as a `Data` object through its `dataRepresentation()`
-/// method. `PKDrawing` is the only PencilKit type supported on non-iOS platforms.
-
-/// From `PKDrawing`'s `image(from:scale:)` method, you can get an image to save, or you can transform a
-/// `PKDrawing` and append it to another drawing.
-
-/// If you already have some saved `PKDrawing`s, you can make them available in this sample app by adding them
-/// to the project's "Assets" catalog, and adding their asset names to the `defaultDrawingNames` array below.
 
 import UIKit
 import PencilKit

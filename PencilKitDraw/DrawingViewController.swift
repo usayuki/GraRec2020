@@ -33,12 +33,22 @@ Abstract:
 import UIKit
 import PencilKit
 
-class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate {
+class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDragInteractionDelegate {
+    
+//    ドロップされるview
+    
+    func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+
+        let dropInteraction = UIDropInteraction(delegate: self)
+        view.addInteraction(dropInteraction)
+    }
+
     
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
     @IBOutlet var undoBarButtonitem: UIBarButtonItem!
     @IBOutlet var redoBarButtonItem: UIBarButtonItem!
+    
     
     /// Standard amount of overscroll allowed in the canvas.
     static let canvasOverscrollHeight: CGFloat = 500
@@ -144,7 +154,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
         let signatureBounds = signature.bounds
         let loc = gesture.location(in: canvasView)
         let scaledLoc = CGPoint(x: loc.x / canvasView.zoomScale, y: loc.y / canvasView.zoomScale)
-        signature.transform(CGAffineTransform(translationX: scaledLoc.x - signatureBounds.midX, y: scaledLoc.y - signatureBounds.midY))
+        signature.transform(using: CGAffineTransform(translationX: scaledLoc.x - signatureBounds.midX, y: scaledLoc.y - signatureBounds.midY))
         
         // Add the signature drawing to the current canvas drawing.
         setNewDrawingUndoable(canvasView.drawing.appending(signature))
