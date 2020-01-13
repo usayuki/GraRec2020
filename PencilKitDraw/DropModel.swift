@@ -15,14 +15,20 @@ import UIKit
 }
 
 class DropInteraction : UIDropInteractionDelegate {
+    
+    
 
-    func dropInteraction() {
+    func dragInteraction(
+      _ interaction: UIDragInteraction,
+      itemsForBeginning session: UIDragSession) -> [UIDragItem] {
 
+      guard let image = imageView.image else { return [] }
+
+      let provider = NSItemProvider(object: image)
+      let item = UIDragItem(itemProvider: provider)
+      item.localObject = image
+      return [item]
     }
-
-    weak var delegate = UIDropInteractionDelegate?()
-
-    delegate.dropInteraction()
 
 }
     

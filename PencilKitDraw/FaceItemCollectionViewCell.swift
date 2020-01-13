@@ -12,10 +12,6 @@ import UIKit
 //ドラッグするもの（＝UICollectionViewCellを継承した子クラス）
 class FaceItemCollectionViewCell: UICollectionViewCell,UIDragInteractionDelegate{
     
-    func dragInteraction() {
-        <#code#>
-    }
-    
     
     @IBOutlet weak var itemImage: UIImageView!
     

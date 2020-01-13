@@ -264,17 +264,36 @@
             </objects>
             <point key="canvasLocation" x="261.15107913669067" y="207.73381294964028"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="NZV-Oy-FeW">
             <objects>
-                <viewController id="KsD-pz-EMt" sceneMemberID="viewController">
+                <viewController id="KsD-pz-EMt" customClass="SettingsViewController" customModule="PencilKitDraw" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Mq-Hx-uu5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="・プライバシーポリシー等" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n13-Z6-1PI">
+                                <rect key="frame" x="83.5" y="0.0" width="208" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4a6-Lo-JXd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="n13-Z6-1PI" firstAttribute="centerY" secondItem="r4B-qT-77f" secondAttribute="centerY" id="7cM-Vp-R6r"/>
+                            <constraint firstItem="n13-Z6-1PI" firstAttribute="height" secondItem="r4B-qT-77f" secondAttribute="height" id="Haa-Ke-gwx"/>
+                            <constraint firstItem="n13-Z6-1PI" firstAttribute="centerX" secondItem="r4B-qT-77f" secondAttribute="centerX" id="dxA-nH-AGk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r4B-qT-77f"/>
                     </view>
                     <size key="freeformSize" width="375" height="400"/>
+                    <connections>
+                        <outlet property="settingLabel" destination="n13-Z6-1PI" id="fxr-iF-gUd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKh-bf-gEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -35,9 +35,12 @@ import PencilKit
 
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDropInteractionDelegate {
     
-    func dropInteraction() {
-        <#code#>
-    }
+//    func dropInteraction() {
+//
+//        let dragInteraction = UIDragInteraction(delegate: self)
+//        imageView.addInteraction(dragInteraction)
+//
+//    }
     
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
