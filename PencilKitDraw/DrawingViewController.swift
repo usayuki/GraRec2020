@@ -34,13 +34,15 @@ import UIKit
 import PencilKit
 
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDropInteractionDelegate {
-
+    
+    func dropInteraction() {
+        <#code#>
+    }
     
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
     @IBOutlet var undoBarButtonitem: UIBarButtonItem!
     @IBOutlet var redoBarButtonItem: UIBarButtonItem!
-    
     
     
     /// スクロールできる高さ

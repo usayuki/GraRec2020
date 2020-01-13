@@ -10,8 +10,6 @@
     
     class FaceItemViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIDragInteractionDelegate{
         
-        
-        
         private let faces = ["face0", "face1", "face2", "face3", "face4", "face5"]
         
         @IBOutlet weak var collectionView: UICollectionView!
@@ -25,23 +23,27 @@
             layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
             collectionView.collectionViewLayout = layout
             
-            //ドラッグする
-            var dragInteraction = UIDragInteraction()
-            dragInteraction.delegate = self
+//            //ドラッグする
+//            var dragInteraction = UIDragInteraction()
+//            dragInteraction.delegate = self
             
         }
         
-            func dragInteraction(
-              _ interaction: UIDragInteraction,
-              itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-
-              guard let image = imageView.image else { return [] }
-
-              let provider = NSItemProvider(object: image)
-              let item = UIDragItem(itemProvider: provider)
-              item.localObject = image
-              return [item]
-            }
+        func dragInteraction() {
+            <#code#>
+        }
+        
+//            func dragInteraction(
+//              _ interaction: UIDragInteraction,
+//              itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+//
+//              guard let image = imageView.image else { return [] }
+//
+//              let provider = NSItemProvider(object: image)
+//              let item = UIDragItem(itemProvider: provider)
+//              item.localObject = image
+//              return [item]
+//            }
             
         
         
@@ -49,6 +51,7 @@
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return 18
         }
+        
         // セル（要素）に表示する内容
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
