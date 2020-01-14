@@ -12,7 +12,6 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var settingLabel: UILabel!
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

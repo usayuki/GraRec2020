@@ -6,30 +6,30 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-import UIKit
-
-protocol UIDragInteractionDelegate{
-    
-    func dragInteraction()
-    
-}
-
-//ドラッグするもの（＝UICollectionViewCellを継承した子クラス）
-class DragInteraction : UIDragInteractionDelegate{
-    
-   func dragInteraction(
-    
-      _ interaction: UIDragInteraction,
-      itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-
-      guard let image = imageView.image else { return [] }
-
-      let provider = NSItemProvider(object: image)
-      let item = UIDragItem(itemProvider: provider)
-      item.localObject = image
-      return [item]
-    }
-    
+//import UIKit
+//
+//protocol UIDragInteractionDelegate{
+//
+//    func dragInteraction()
+//    
+//}
+//
+////ドラッグするもの（＝UICollectionViewCellを継承した子クラス）
+//class DragInteraction : UIDragInteractionDelegate{
+//
+//   func dragInteraction(
+//
+//      _ interaction: UIDragInteraction,
+//      itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+//
+//      guard let image = imageView.image else { return [] }
+//
+//      let provider = NSItemProvider(object: image)
+//      let item = UIDragItem(itemProvider: provider)
+//      item.localObject = image
+//      return [item]
+//    }
+//
     
 
 //    let dragInteraction = UIDragInteraction(delegate: self)
@@ -50,5 +50,5 @@ class DragInteraction : UIDragInteractionDelegate{
 //    }
 
     
-    
-}
+//
+//}

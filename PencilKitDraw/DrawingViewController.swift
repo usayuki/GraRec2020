@@ -35,12 +35,11 @@ import PencilKit
 
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDropInteractionDelegate {
     
-//    func dropInteraction() {
-//
-//        let dragInteraction = UIDragInteraction(delegate: self)
-//        imageView.addInteraction(dragInteraction)
-//
-//    }
+    func dropInteraction() {
+        
+    }
+    
+    
     
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
@@ -84,8 +83,12 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
             updateLayout(for: toolPicker)
             canvasView.becomeFirstResponder()
             
+            //ドロップする
+            let dropInteraction = UIDropInteractionDelegate(delegate: self)
+            imageView.addInteraction(dragInteraction)
  
         }
+        
         
         // Add a gesture recognizer that allows the user to sign the drawing by
         // tapping on the canvas with a finger.

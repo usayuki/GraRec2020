@@ -6,19 +6,24 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-import UIKit
-
-
-//ドラッグするもの（＝UICollectionViewCellを継承した子クラス）
-class FaceItemCollectionViewCell: UICollectionViewCell,UIDragInteractionDelegate{
-    
-    
-    @IBOutlet weak var itemImage: UIImageView!
-    
-    //
-    
-    
-    
-    
-    
-}
+//import UIKit
+//
+//
+//
+//
+//class FaceItemCollectionViewCell: UICollectionViewCell,UIDragInteractionDelegate{
+//
+//
+//    //ドラッグするもの
+//    @IBOutlet weak var itemImage : UIImageView!
+//
+//    //
+//    let dragInteraction = UIDragInteraction(delegate: self)
+//    imageView.addInteraction(dragInteraction)
+//
+//    func dragInteraction() {
+//           dragInteraction()
+//       }
+//
+//
+//}

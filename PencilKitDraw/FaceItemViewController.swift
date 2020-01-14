@@ -10,14 +10,14 @@
     
     class FaceItemViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIDragInteractionDelegate{
         
-        func dragInteraction() {
-            dragInteraction()
-        }
+        //        /// Data model for the drawing displayed by this view controller.
+        //          var dataModelController: DataModelController!
         
-        
-        private let faces = ["face0", "face1", "face2", "face3", "face4", "face5"]
+        private let faces = ["face0", "face1", "face2", "face3", "face4", "face5","face6", "face7", "face8", "face9", "face10", "face11","face12", "face13", "face14"]
         
         @IBOutlet weak var collectionView: UICollectionView!
+        
+        @IBOutlet weak var imageView: UIImageView!
         
         
         override func viewDidLoad() {
@@ -29,35 +29,21 @@
             collectionView.collectionViewLayout = layout
             
             //ドラッグする
+            collectionView.delegate = self
             var dragInteraction = UIDragInteraction(delegate: self)
             UIImageView.addInteraction(dragInteraction)
             dragInteraction.isEnabled = true
             
-            
         }
-        
-        extension FaceItemViewController : UIDragInteractionDelegate{
-            
-            func dragInteraction(
-                _ interaction: UIDragInteraction,
-                itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-                
-                guard let image = imageView.image else { return [] }
-                
-                let provider = NSItemProvider(object: image)
-                let item = UIDragItem(itemProvider: provider)
-                item.localObject = image
-                return [item]
-            }
-            
+        //ドラッグのデリゲート
+        func dragInteraction() {
+            dragInteraction()
         }
-        
-        
         
         
         //セルの表示数
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 18
+            return 14
         }
         
         // セル（要素）に表示する内容
@@ -84,3 +70,22 @@
         
         
     }
+    
+    
+    extension FaceItemViewController : UIDragInteractionDelegate{
+        
+        func dragInteraction(
+            _ interaction: UIDragInteraction,
+            itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+            
+            guard let image = imageView.image else { return [] }
+            
+            let provider = NSItemProvider(object: image)
+            let item = UIDragItem(itemProvider: provider)
+            item.localObject = image
+            return [item]
+        }
+        
+    }
+    
+    
