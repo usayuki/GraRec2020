@@ -7,32 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E29C68A23CB1A4600D4E64D /* DropModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29C68923CB1A4600D4E64D /* DropModel.swift */; };
 		8E2A66BB23BC663700D0E815 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A66BA23BC663700D0E815 /* SettingsViewController.swift */; };
-		8E33D41723CB61ED0050EC05 /* DragModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E33D41623CB61ED0050EC05 /* DragModel.swift */; };
+		8E2D0F6823CF5A20007A7EE5 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0F6723CF5A20007A7EE5 /* DataModel.swift */; };
 		8E42496623BDD95E002F5657 /* FaceItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42496523BDD95E002F5657 /* FaceItemViewController.swift */; };
 		8E535EB323CADC0B0084F66D /* FaceItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E535EB223CADC0B0084F66D /* FaceItemCollectionViewCell.swift */; };
 		DA4FD8922278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FD8912278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift */; };
-		DA4FD8AE2278F074000FE6C3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FD8AD2278F074000FE6C3 /* DataModel.swift */; };
 		DA67042F22946742004011A1 /* PencilKitDrawNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADCBC1A2290DEB300236FA7 /* PencilKitDrawNavigationController.swift */; };
 		DAB023A82278AC4C005102E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB023A72278AC4C005102E6 /* AppDelegate.swift */; };
 		DAB023AA2278AC4C005102E6 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB023A92278AC4C005102E6 /* DrawingViewController.swift */; };
 		DAB023AD2278AC4C005102E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB023AB2278AC4C005102E6 /* Main.storyboard */; };
 		DAB023AF2278AC4E005102E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB023AE2278AC4E005102E6 /* Assets.xcassets */; };
 		DAB023B22278AC4E005102E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB023B02278AC4E005102E6 /* LaunchScreen.storyboard */; };
-		DAB860E9227CE6DA009C9B1D /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB860E8227CE6DA009C9B1D /* SignatureViewController.swift */; };
 		DAC481D5227A1AA10076D01F /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC481D4227A1AA10076D01F /* ThumbnailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E29C68923CB1A4600D4E64D /* DropModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropModel.swift; sourceTree = "<group>"; };
 		8E2A66BA23BC663700D0E815 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		8E33D41623CB61ED0050EC05 /* DragModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragModel.swift; sourceTree = "<group>"; };
+		8E2D0F6723CF5A20007A7EE5 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = "../../GraRec2020 3/PencilKitDraw/DataModel.swift"; sourceTree = "<group>"; };
 		8E42496523BDD95E002F5657 /* FaceItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceItemViewController.swift; sourceTree = "<group>"; };
 		8E535EB223CADC0B0084F66D /* FaceItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C720C209C7206E000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DA4FD8912278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewController.swift; sourceTree = "<group>"; };
-		DA4FD8AD2278F074000FE6C3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DAB023A42278AC4C005102E6 /* GraReco2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraReco2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB023A72278AC4C005102E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB023A92278AC4C005102E6 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +35,6 @@
 		DAB023AE2278AC4E005102E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB023B12278AC4E005102E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB023B32278AC4E005102E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB860E8227CE6DA009C9B1D /* SignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
 		DAC481D4227A1AA10076D01F /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		DADCBC1A2290DEB300236FA7 /* PencilKitDrawNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitDrawNavigationController.swift; sourceTree = "<group>"; };
 		E7D5A4A0E7D5A57000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
@@ -102,12 +96,9 @@
 				DAC481D4227A1AA10076D01F /* ThumbnailCollectionViewCell.swift */,
 				8E2A66BA23BC663700D0E815 /* SettingsViewController.swift */,
 				DAB023A92278AC4C005102E6 /* DrawingViewController.swift */,
-				DA4FD8AD2278F074000FE6C3 /* DataModel.swift */,
-				8E29C68923CB1A4600D4E64D /* DropModel.swift */,
+				8E2D0F6723CF5A20007A7EE5 /* DataModel.swift */,
 				8E42496523BDD95E002F5657 /* FaceItemViewController.swift */,
 				8E535EB223CADC0B0084F66D /* FaceItemCollectionViewCell.swift */,
-				8E33D41623CB61ED0050EC05 /* DragModel.swift */,
-				DAB860E8227CE6DA009C9B1D /* SignatureViewController.swift */,
 				DAB023B32278AC4E005102E6 /* Info.plist */,
 				DAB023AB2278AC4C005102E6 /* Main.storyboard */,
 				DAB023AE2278AC4E005102E6 /* Assets.xcassets */,
@@ -206,15 +197,12 @@
 				8E535EB323CADC0B0084F66D /* FaceItemCollectionViewCell.swift in Sources */,
 				DAB023AA2278AC4C005102E6 /* DrawingViewController.swift in Sources */,
 				DA67042F22946742004011A1 /* PencilKitDrawNavigationController.swift in Sources */,
-				8E29C68A23CB1A4600D4E64D /* DropModel.swift in Sources */,
 				8E42496623BDD95E002F5657 /* FaceItemViewController.swift in Sources */,
 				DAB023A82278AC4C005102E6 /* AppDelegate.swift in Sources */,
 				DA4FD8922278E5F5000FE6C3 /* ThumbnailCollectionViewController.swift in Sources */,
 				DAC481D5227A1AA10076D01F /* ThumbnailCollectionViewCell.swift in Sources */,
-				DAB860E9227CE6DA009C9B1D /* SignatureViewController.swift in Sources */,
-				8E33D41723CB61ED0050EC05 /* DragModel.swift in Sources */,
-				DA4FD8AE2278F074000FE6C3 /* DataModel.swift in Sources */,
 				8E2A66BB23BC663700D0E815 /* SettingsViewController.swift in Sources */,
+				8E2D0F6823CF5A20007A7EE5 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

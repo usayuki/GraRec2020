@@ -11,11 +11,12 @@
 //
 //
 //
-//class FaceItemCollectionViewCell: UICollectionViewCell,UIDragInteractionDelegate{
+//class FaceItemCollectionViewCell: UICollectionViewCell{
 //
-//
-//    //ドラッグするもの
-//    @IBOutlet weak var itemImage : UIImageView!
+//    @IBOutlet weak var itemView: UIImageView!
+//    
+////    //ドラッグするもの
+
 //
 //    //
 //    let dragInteraction = UIDragInteraction(delegate: self)
@@ -25,5 +26,5 @@
 //           dragInteraction()
 //       }
 //
+
 //
-//}

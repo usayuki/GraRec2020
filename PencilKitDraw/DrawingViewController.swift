@@ -167,12 +167,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     }
     
     // MARK: Navigation
-    
-    /// Setup the signature view controller.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? SignatureViewController)?.dataModelController = dataModelController
-    }
-    
+
     // MARK: Canvas View Delegate
     
     /// Delegate method: Note that the drawing has changed.

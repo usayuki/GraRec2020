@@ -22,6 +22,8 @@
         
         @IBOutlet weak var collectionView: UICollectionView!
         
+        @IBOutlet weak var imageView: UIImageView!
+        
         //        @IBOutlet weak var imageView: UIImageView!
         
         //        var dragInteraction : UIDragInteractionDelegate?
