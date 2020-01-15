@@ -19,13 +19,13 @@
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozl-G5-8Cu" customClass="PKCanvasView">
                                 <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" restorationIdentifier="itemSgueButtun" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zf-4s-wiK">
-                                        <rect key="frame" x="39" y="80" width="92" height="92"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="face0">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" restorationIdentifier="itemSgueButtun" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zf-4s-wiK">
+                                        <rect key="frame" x="1082" y="50" width="92" height="92"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="92" id="4QT-On-cAF"/>
+                                            <constraint firstAttribute="height" constant="92" id="dbO-eB-svW"/>
+                                        </constraints>
+                                        <state key="normal" image="itemBox-1">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                         </state>
                                         <connections>
@@ -36,6 +36,10 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5zf-4s-wiK" secondAttribute="trailing" constant="20" id="aKy-r0-1CK"/>
+                                    <constraint firstItem="5zf-4s-wiK" firstAttribute="top" secondItem="ozl-G5-8Cu" secondAttribute="top" constant="50" id="x1l-fC-8rf"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -321,5 +325,6 @@
     </scenes>
     <resources>
         <image name="face0" width="1000" height="1000"/>
+        <image name="itemBox-1" width="1000" height="1000"/>
     </resources>
 </document>
