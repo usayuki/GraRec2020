@@ -8,7 +8,12 @@
     
     import UIKit
     
-    class FaceItemViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIDragInteractionDelegate{
+//    protocol UIDragInteractionDelegate: class {
+//
+//        func dragInteraction()
+//    }
+    
+    class FaceItemViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate{
         
         //        /// Data model for the drawing displayed by this view controller.
         //          var dataModelController: DataModelController!
@@ -17,7 +22,9 @@
         
         @IBOutlet weak var collectionView: UICollectionView!
         
-        @IBOutlet weak var imageView: UIImageView!
+        //        @IBOutlet weak var imageView: UIImageView!
+        
+        //        var dragInteraction : UIDragInteractionDelegate?
         
         
         override func viewDidLoad() {
@@ -29,34 +36,36 @@
             collectionView.collectionViewLayout = layout
             
             //ドラッグする
-            collectionView.delegate = self
-            var dragInteraction = UIDragInteraction(delegate: self)
-            UIImageView.addInteraction(dragInteraction)
-            dragInteraction.isEnabled = true
-            
+            //            collectionView.delegate = self
+            //            var dragInteraction = UIDragInteraction(delegate: self)
+            //            UIImageView.addInteraction(dragInteraction)
+            //            dragInteraction.isEnabled = true
+            //
         }
         //ドラッグのデリゲート
-        func dragInteraction() {
-            dragInteraction()
-        }
-        
+        //        func dragInteraction() {
+        //            dragInteraction()
+        //        }
+        //
         
         //セルの表示数
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 14
+            return faces.count;
         }
         
         // セル（要素）に表示する内容
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"FaceCell",for: indexPath )
+            let cell : UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:"FaceCell",for: indexPath )
             
-            // Tag番号を使ってインスタンスをつくる
-            //            let faceImageView = cell.contentView.viewWithTag(1)  as! UIImageView
-            //            let faceImage = UIImage(named: faces[indexPath.row])
-            //            faceImageView.image = faceImage
+            //Tag番号を使ってインスタンスをつくる
+            let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+            //画像配列の番号で指定された要素の名前の画像をUIimageとする
+            let cellImage = UIImage(named: faces[indexPath.row])
+            //UIimageをUIimageViewのimageとして設定
+            imageView.image = cellImage
             
-            cell.backgroundColor = .red
+            cell.backgroundColor = .white
             
             return cell
             
@@ -72,20 +81,20 @@
     }
     
     
-    extension FaceItemViewController : UIDragInteractionDelegate{
-        
-        func dragInteraction(
-            _ interaction: UIDragInteraction,
-            itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-            
-            guard let image = imageView.image else { return [] }
-            
-            let provider = NSItemProvider(object: image)
-            let item = UIDragItem(itemProvider: provider)
-            item.localObject = image
-            return [item]
-        }
-        
-    }
+    //    extension FaceItemViewController : UIDragInteractionDelegate{
+    //
+    //        func dragInteraction(
+    //            _ interaction: UIDragInteraction,
+    //            itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+    //
+    //            guard let image = imageView.image else { return [] }
+    //
+    //            let provider = NSItemProvider(object: image)
+    //            let item = UIDragItem(itemProvider: provider)
+    //            item.localObject = image
+    //            return [item]
+    //        }
+    
+    //    }
     
     

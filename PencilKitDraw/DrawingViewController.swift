@@ -33,7 +33,7 @@ Abstract:
 import UIKit
 import PencilKit
 
-class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate,UIDropInteractionDelegate {
+class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate {
     
     func dropInteraction() {
         
@@ -84,8 +84,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
             canvasView.becomeFirstResponder()
             
             //ドロップする
-            let dropInteraction = UIDropInteractionDelegate(delegate: self)
-            imageView.addInteraction(dragInteraction)
+//            let dropInteraction = UIDropInteractionDelegate(delegate: self)
+//            imageView.addInteraction(dragInteraction)
  
         }
         
