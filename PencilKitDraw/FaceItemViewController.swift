@@ -8,26 +8,12 @@
 
 import UIKit
 
-//    protocol UIDragInteractionDelegate: class {
-//
-//        func dragInteraction()
-//    }
-
-class FaceItemViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate{
-    
-    //        /// Data model for the drawing displayed by this view controller.
-    //          var dataModelController: DataModelController!
-    
+class FaceItemViewController: UIViewController {
     private let faces = ["face0", "face1", "face2", "face3", "face4", "face5","face6", "face7", "face8", "face9", "face10", "face11","face12", "face13", "face14"]
     
+    var parentVC: DrawingViewController!
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    //        @IBOutlet weak var imageView: UIImageView!
-    
-    //        var dragInteraction : UIDragInteractionDelegate?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +23,15 @@ class FaceItemViewController: UIViewController,UICollectionViewDataSource,UIColl
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         collectionView.collectionViewLayout = layout
         
-        //ドラッグする
-        //            collectionView.delegate = self
-        //            var dragInteraction = UIDragInteraction(delegate: self)
-        //            UIImageView.addInteraction(dragInteraction)
-        //            dragInteraction.isEnabled = true
-        //
+        collectionView.dataSource = self
+        collectionView.dragDelegate = self
+        
+        let dropInteraction = UIDropInteraction(delegate: self)
+        view.addInteraction(dropInteraction)
     }
-    //ドラッグのデリゲート
-    //        func dragInteraction() {
-    //            dragInteraction()
-    //        }
-    //
-    
+}
+
+extension FaceItemViewController: UICollectionViewDataSource {
     //セルの表示数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return faces.count;
@@ -61,31 +43,46 @@ class FaceItemViewController: UIViewController,UICollectionViewDataSource,UIColl
         cell.itemImage.image = UIImage(named: faces[indexPath.item])
         return cell
     }
-    
+}
+
+extension FaceItemViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let horizontalSpace : CGFloat = 20
         let cellSize : CGFloat = self.view.bounds.width / 3 - horizontalSpace
         return CGSize(width: cellSize, height: cellSize)
     }
-    
-    
 }
 
+extension FaceItemViewController: UICollectionViewDragDelegate {
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        guard let image = UIImage(named: faces[indexPath.item]) else { return [] }
+        let itemProvider = NSItemProvider(object: image)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        return [dragItem]
+    }
+}
 
-//    extension FaceItemViewController : UIDragInteractionDelegate{
-//
-//        func dragInteraction(
-//            _ interaction: UIDragInteraction,
-//            itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-//
-//            guard let image = imageView.image else { return [] }
-//
-//            let provider = NSItemProvider(object: image)
-//            let item = UIDragItem(itemProvider: provider)
-//            item.localObject = image
-//            return [item]
-//        }
-
-//    }
-
-
+extension FaceItemViewController: UIDropInteractionDelegate {
+    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+        return session.canLoadObjects(ofClass: UIImage.self)
+    }
+    
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        // ドラッグ中のアイテムが画像を含んでいる場合はドロップ可能
+        if session.canLoadObjects(ofClass: UIImage.self) {
+            return UIDropProposal(operation: .copy)
+        } else {
+            return UIDropProposal(operation: .cancel)
+        }
+    }
+    
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        session.loadObjects(ofClass: UIImage.self, completion: { [weak self] imageItems in
+            guard let images = imageItems as? [UIImage] else { return }
+            let imageView = UIImageView(image: images.first)
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleAspectFill
+            self?.parentVC.canvasView.addSubview(imageView)
+        })
+    }
+}

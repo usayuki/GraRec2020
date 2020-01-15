@@ -34,18 +34,10 @@ import UIKit
 import PencilKit
 
 class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerObserver, UIScreenshotServiceDelegate {
-    
-    func dropInteraction() {
-        
-    }
-    
-    
-    
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
     @IBOutlet var undoBarButtonitem: UIBarButtonItem!
     @IBOutlet var redoBarButtonItem: UIBarButtonItem!
-    
     
     /// スクロールできる高さ
     static let canvasOverscrollHeight: CGFloat = 500
@@ -82,11 +74,6 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
             
             updateLayout(for: toolPicker)
             canvasView.becomeFirstResponder()
-            
-            //ドロップする
-//            let dropInteraction = UIDropInteractionDelegate(delegate: self)
-//            imageView.addInteraction(dragInteraction)
- 
         }
         
         
@@ -167,6 +154,11 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     }
     
     // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! FaceItemViewController
+        nextVC.parentVC = self
+    }
 
     // MARK: Canvas View Delegate
     
