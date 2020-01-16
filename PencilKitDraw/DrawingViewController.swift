@@ -150,6 +150,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     
     /// Action method: Add a signature to the current drawing.
     @IBAction func signDrawing(_ gesture: UITapGestureRecognizer) {
+        // popoverViewがあれば閉じる
+        dismissPopover()
         
         // Get the signature drawing at the canvas scale.
         var signature = dataModelController.signature
