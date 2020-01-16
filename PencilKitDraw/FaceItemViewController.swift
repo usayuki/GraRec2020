@@ -11,8 +11,6 @@ import UIKit
 class FaceItemViewController: UIViewController {
     private let faces = ["face0", "face1", "face2", "face3", "face4", "face5","face6", "face7", "face8", "face9", "face10", "face11","face12", "face13", "face14"]
     
-    var parentVC: DrawingViewController!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -25,9 +23,6 @@ class FaceItemViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.dragDelegate = self
-        
-        let dropInteraction = UIDropInteraction(delegate: self)
-        view.addInteraction(dropInteraction)
     }
 }
 
@@ -59,30 +54,5 @@ extension FaceItemViewController: UICollectionViewDragDelegate {
         let itemProvider = NSItemProvider(object: image)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         return [dragItem]
-    }
-}
-
-extension FaceItemViewController: UIDropInteractionDelegate {
-    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
-        return session.canLoadObjects(ofClass: UIImage.self)
-    }
-    
-    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
-        // ドラッグ中のアイテムが画像を含んでいる場合はドロップ可能
-        if session.canLoadObjects(ofClass: UIImage.self) {
-            return UIDropProposal(operation: .copy)
-        } else {
-            return UIDropProposal(operation: .cancel)
-        }
-    }
-    
-    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
-        session.loadObjects(ofClass: UIImage.self, completion: { [weak self] imageItems in
-            guard let images = imageItems as? [UIImage] else { return }
-            let imageView = UIImageView(image: images.first)
-            imageView.clipsToBounds = true
-            imageView.contentMode = .scaleAspectFill
-            self?.parentVC.canvasView.addSubview(imageView)
-        })
     }
 }

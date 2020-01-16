@@ -38,6 +38,7 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     @IBOutlet weak var pencilFingerBarButtonItem: UIBarButtonItem!
     @IBOutlet var undoBarButtonitem: UIBarButtonItem!
     @IBOutlet var redoBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var toolBoxButton: UIButton!
     
     /// スクロールできる高さ
     static let canvasOverscrollHeight: CGFloat = 500
@@ -54,6 +55,14 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     var hasModifiedDrawing = false
     
     // MARK: View Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // canvasViewにドロップ設定追加
+        let dropInteraction = UIDropInteraction(delegate: self)
+        canvasView.addInteraction(dropInteraction)
+    }
     
     /// Set up the drawing initially.
     override func viewWillAppear(_ animated: Bool) {
@@ -156,8 +165,12 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! FaceItemViewController
-        nextVC.parentVC = self
+        // ボタンから吹き出しを出す
+        let presentationController = segue.destination.popoverPresentationController
+        presentationController?.sourceView = toolBoxButton
+        presentationController?.sourceRect = toolBoxButton.bounds
+        // Popoverの背面のcanvasViewを有効化する
+        presentationController?.passthroughViews = [canvasView]
     }
 
     // MARK: Canvas View Delegate
@@ -275,5 +288,26 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
             // Invoke the completion handler with the generated PDF data.
             completion(mutableData as Data, 0, visibleRectInPDF)
         }
+    }
+}
+
+extension DrawingViewController: UIDropInteractionDelegate {
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        // ドラッグ中のアイテムが画像を含んでいる場合はドロップ可能
+        if session.canLoadObjects(ofClass: UIImage.self) {
+            return UIDropProposal(operation: .copy)
+        } else {
+            return UIDropProposal(operation: .cancel)
+        }
+    }
+
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        session.loadObjects(ofClass: UIImage.self, completion: { [weak self] imageItems in
+            guard let images = imageItems as? [UIImage] else { return }
+            let imageView = UIImageView(image: images.first)
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleAspectFill
+            self?.canvasView.addSubview(imageView)
+        })
     }
 }

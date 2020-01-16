@@ -70,6 +70,7 @@
                         <outlet property="canvasView" destination="ozl-G5-8Cu" id="Nnl-hg-fJ2"/>
                         <outlet property="pencilFingerBarButtonItem" destination="8cr-Wb-SnU" id="bpC-rG-p6b"/>
                         <outlet property="redoBarButtonItem" destination="0Nh-lV-o2K" id="YnF-zT-Mi2"/>
+                        <outlet property="toolBoxButton" destination="5zf-4s-wiK" id="83h-ob-cvG"/>
                         <outlet property="undoBarButtonitem" destination="vQi-JN-vlr" id="P9F-JN-De4"/>
                     </connections>
                 </viewController>
