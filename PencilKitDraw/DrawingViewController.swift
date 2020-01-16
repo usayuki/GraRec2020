@@ -291,6 +291,8 @@ class DrawingViewController: UIViewController, PKCanvasViewDelegate, PKToolPicke
     }
 }
 
+// MARK: UIDropInteraction Delegate
+
 extension DrawingViewController: UIDropInteractionDelegate {
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
         // ドラッグ中のアイテムが画像を含んでいる場合はドロップ可能
@@ -308,6 +310,16 @@ extension DrawingViewController: UIDropInteractionDelegate {
             imageView.clipsToBounds = true
             imageView.contentMode = .scaleAspectFill
             self?.canvasView.addSubview(imageView)
+            
+            self?.dismissPopover()
         })
+    }
+}
+
+// MARK: Private functions
+
+extension DrawingViewController {
+    private func dismissPopover() {
+        presentedViewController?.dismiss(animated: true, completion: nil)
     }
 }
